@@ -1,0 +1,87 @@
+.hidden {
+  display: none;
+}
+
+.RecButtonWidget {
+  margin-left: 10px;
+}
+
+.RecButtonWidget a, .RecButtonWidget a:visited, .RecButtonWidget a:active, .RecButtonWidget .timer {
+  color: red;
+  text-decoration: none;
+  font-family: Helvetica;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.RecButtonWidget .button {
+  height: 15px;
+  width: 15px;
+  background-color: red;
+  margin: 3px;
+  float: left;
+}
+
+.RecButtonWidget .record {
+  -moz-border-radius:    15px;
+  -webkit-border-radius: 15px;  
+}
+
+.RecButtonWidget.recording .record {
+  background-color: black;
+}
+
+.RecButtonWidget.recording .timer {
+  display: block;
+}
+
+.RecButtonWidget.recording .title, .RecButtonWidget.recorded .title {
+  display: none;
+}
+
+ .RecButtonWidget.recorded .play,  .RecButtonWidget.recorded .upload {
+   display: block;
+ }
+
+.RecButtonWidget .play {
+  font-size: 0px; line-height: 0%; width: 0px;
+  border-top:     8px solid white;
+  border-left:   15px solid red;
+  border-bottom:  8px solid white;
+  width: 0px;
+  height: 0px;
+}
+
+.RecButtonWidget .upload {
+  background-color: white;
+}
+
+.RecButtonWidget .upload .arrow {
+  font-size: 0px; line-height: 0%; width: 0px;
+  border-bottom:  9px solid red;
+  border-left:    10px solid white;
+  border-right:   10px solid white;
+}
+
+.RecButtonWidget .upload .box {
+  background-color: red;
+  margin-left: 7px;
+  width:  5px;
+  height: 6px;
+}
+
+.RecButtonWidget .stop {}
+
+.RecButtonWidget .pause {
+  background-color: white;
+  border-left:  5px solid red;
+  border-right: 5px solid red;
+  width: 5px;
+}
+
+.RecButtonWidget .time {
+  margin-left: 5px;
+  font-size: 1.4em;
+  font-weight: bold;
+  color: red;
+}

@@ -68,5 +68,17 @@ $(function(){
     $RecButtonWidget = $(that).closest('.RecButtonWidget');
     $RecButtonWidget.removeClass("played").addClass('playing');
   });
+  
+  
+  $('.scconnect').live('click', function(){
+    var url = 'http://localhost/complete.html';
+//    var rt_url = 'http://recbutton.com/oauth/request_token?next=' + url;
+    // returns with 
+    var rt_url = 'http://localhost:3002/oauth/request_token?next=' + url;
+    
+    var x = window.open(rt_url, "sc_connect_popup", "location=1, width=456, height=500,toolbar=no,scrollbars=yes");
+  });
 
 });
+
+var x;

@@ -1,5 +1,5 @@
 var RecButton = {
-  swfCode: '<object width="230" height="140"><param value="transparent" name="wmode"><param value="/Recorder.swf" name="movie"><param value="always" name="allowscriptaccess"><embed width="230" height="140" wmode="transparent"   type="application/x-shockwave-flash" src="/Recorder.swf" allowscriptaccess="always">  </object>',
+  swfCode: '<object width="230" height="140"><param value="transparent" name="wmode"><param value="Recorder.swf" name="movie"><param value="always" name="allowscriptaccess"><embed width="230" height="140" wmode="transparent"   type="application/x-shockwave-flash" src="Recorder.swf" allowscriptaccess="always">  </object>',
   swfObject: null,
   events: {},
     //showFlash, hideFlash, recordStart, recordStop:, playStart: , playStop:  , uploadStart, uploadState, uploadStop:, error:     

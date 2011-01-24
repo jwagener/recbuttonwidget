@@ -43,6 +43,7 @@ $(function(){
   
   $('.RecButtonWidget .button.record').live('click', function(){
     var that = this;
+    RecButton.clear();
     RecButton.record({
       onStart: function(){
         $RecButtonWidget = $(that).closest('.RecButtonWidget');

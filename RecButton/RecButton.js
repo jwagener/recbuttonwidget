@@ -10,6 +10,10 @@ var RecButton = {
     this.swfObject = options['flashContainer'].children[0];
   },
 
+  clear: function(){
+    RecButton.events = {};
+  },
+
   record: function(options){
     this.bind('recordingStart', options['onStart']);
     this.flashTrigger('startRecording');
@@ -22,6 +26,10 @@ var RecButton = {
   
   play: function(){
     this.flashTrigger('startPlaying');
+  },
+
+  post: function(url){
+    this.flashTrigger('post', [url]);
   },
 
   bind: function(eventName, fn){

@@ -39,7 +39,10 @@ var RecButton = {
     if(!args){
       args = [];
     }
-    return this.swfObject.sendToActionScript(functionName + " " + args.join(" "));
+    
+    // ugly workaround for firefox to use the embed
+    var f = this.swfObject.sendToActionScript ? this.swfObject : this.swfObject.children[3];
+    return f.sendToActionScript(functionName + " " + args.join(" "));
   }
 };
 

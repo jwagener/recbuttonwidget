@@ -16,20 +16,20 @@ var RecButton = {
 
   record: function(options){
     this.bind('recordingStart', options['onStart']);
-    this.flashTrigger('startRecording');
+    this.flashInterface().startRecording();
   },
   
   stop: function(){
-    this.flashTrigger('stopRecording');
-    this.flashTrigger('stopPlaying');
+    this.flashInterface().stopRecording();
+    this.flashInterface().stopPlaying();
   },
   
   play: function(){
-    this.flashTrigger('startPlaying');
+    this.flashInterface().startPlaying();
   },
 
-  post: function(url){
-    this.flashTrigger('post', [url]);
+  upload: function(url, params){
+    this.flashInterface().upload(url, params);
   },
 
   bind: function(eventName, fn){
@@ -43,15 +43,9 @@ var RecButton = {
     }
   },
 
-  flashTrigger: function(functionName, args){
-    if(!args){
-      args = [];
-    }
-    
-    // ugly workaround for firefox to use the embed
-    var f = this.swfObject.sendToActionScript ? this.swfObject : this.swfObject.children[3];
-    return f.sendToActionScript(functionName + " " + args.join(" "));
-  }
+  flashInterface: function(){
+    return this.swfObject.sendToActionScript ? this.swfObject : this.swfObject.children[3];
+  },
 };
 
 
@@ -64,8 +58,8 @@ function Recorder(swfObject){
      return swfObject.sendToActionScript(message);
    };
    
-   this.post = function(uri){
-     return this.send('post ' + uri);
+   this.upload = function(uri){
+     return this.send('upload ' + uri);
    };
    
    this.setup = function(){

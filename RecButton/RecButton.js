@@ -1,5 +1,5 @@
 var RecButton = {
-  swfCode: '<object width="230" height="140"><param value="transparent" name="wmode"><param value="Recorder.swf" name="movie"><param value="always" name="allowscriptaccess"><embed width="230" height="140" wmode="transparent"   type="application/x-shockwave-flash" src="Recorder.swf" allowscriptaccess="always">  </object>',
+  swfCode: '<object id="RecButton" width="230" height="140" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"><param value="transparent" name="wmode"><param value="Recorder.swf" name="movie"><param value="always" name="allowScriptAccess"><embed width="230" height="140" wmode="transparent" name="RecButton" type="application/x-shockwave-flash" src="Recorder.swf" allowscriptaccess="always">  </object>',
   swfObject: null,
   events: {},
     //showFlash, hideFlash, recordStart, recordStop:, playStart: , playStop:  , uploadStart, uploadState, uploadStop:, error:     
@@ -28,7 +28,8 @@ var RecButton = {
     this.flashInterface().startPlaying();
   },
 
-  upload: function(url, params){
+  upload: function(url, params, options){
+    this.bind("uploadComplete", options.onUploadComplete);
     this.flashInterface().upload(url, params);
   },
 
@@ -44,7 +45,7 @@ var RecButton = {
   },
 
   flashInterface: function(){
-    return this.swfObject.sendToActionScript ? this.swfObject : this.swfObject.children[3];
+    return this.swfObject.startRecording ? this.swfObject : this.swfObject.children[3];
   },
 };
 
